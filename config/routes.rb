@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'visualization/index'
+
   get 'applications/index'
 
   get 'applications/new'
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
   get '/apis' => 'api#index'
   get '/applications' => 'applications#index'
   get '/applications/new' => 'applications#new'
+  get '/visualization' => 'visualization#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
