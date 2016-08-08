@@ -34,6 +34,8 @@ gem 'react-rails', '~> 1.7.0'
 gem 'rails-backbone'
 gem 'underscore-rails'
 
+gem 'material_icons'
+
 # editor
 gem 'jquery-ace-rails'
 

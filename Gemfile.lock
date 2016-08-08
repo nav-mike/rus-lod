@@ -86,6 +86,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    material_icons (2.2.0)
+      railties (>= 3.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -196,6 +198,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-ace-rails
   jquery-rails
+  material_icons
   rails (= 4.2.5.2)
   rails-backbone
   react-rails (~> 1.7.0)

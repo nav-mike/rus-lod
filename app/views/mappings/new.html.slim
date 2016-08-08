@@ -1,0 +1,18 @@
+h1 Добавить новый маппинг
+
+form
+  .form-group
+    label.form-control style='color: #009688;' Текст маппинг файла
+    textarea.my-code-area rows="8" style="width: 100%"
+      = @sparql
+
+  .form-group.is-fileinput
+    label Маппинг файл
+    input.form-control type='text' readonly=true placeholder='Browse...'
+    input type='file'
+    
+  .form-group
+    button.btn.btn-primary.btn-fab title='Создать' type='button'
+      i.material-icons add
+    button.btn.btn-default.btn-fab title='Отмена' type='button'
+      i.material-icons cancel

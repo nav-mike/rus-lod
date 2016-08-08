@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'mappings#index'
 
   get '/mappings' => 'mappings#index'
+  get '/mappings/new' => 'mappings#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
