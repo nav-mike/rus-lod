@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content='IE=edge' http-equiv='X-UA-Compatible'
+    meta content='width=device-width, initial-scale=1' name='viewport'
+    title Портал Открытых Данных Российских Университетов
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed aria-controls='navbar' aria-expanded='false' data-toggle='collapse' type='button'
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href='/' Портал Открытых Данных Российских Университетов
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a href='/mappings' Маппинги
+            li
+              a href='/data' Данные
+            li
+              a href='/apis' API
+            li
+              a href='/visualization' Визуализация
+            li
+              a href='/statistics' Статистика
+            li
+              a href='/about' О проекте
+
+    .container style='padding-top: 40px;'
+      == yield
+
+    footer.footer
+      .container
+        p.text-muted.text-center
+          a.muted.footer-link href='/contacts' title='Контакты'
+            i.fa.fa-fw.fa-envelope-o
+          a.muted.footer-link href='#' title='Международная лаборатория "Интеллектуальные методы обработки информации и семантические технологии"' target='_blank'
+            i.fa.fa-fw.fa-codepen
+          a.muted.footer-link href='https://github.com/nav-mike/rus-lod' target='_blank' title='Исходный код'
+            i.fa.fa-fw.fa-github
+          a.muted.footer-link href='https://github.com/nav-mike/rus-lod/wiki' target='_blank' title='wiki'
+            i.fa.fa-fw.fa-info
+
