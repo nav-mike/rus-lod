@@ -1,2 +1,33 @@
-h1 Applications#new
-p Find me in app/views/applications/new.html.slim
+h1 Добавить новое приложение
+
+.container
+  .col-md-7.col-md-offset-1
+    form.form-horizontal
+      .form-group.label-floating
+        label.control-label Название
+        input.form-control type='text'
+        p.help-block Название вашего приложения. Максимум 32 символа.
+
+      .form-group.label-floating
+        label.control-label Описание
+        input.form-control type='text'
+        p.help-block Описание вашего приложения. Используйте его, чтобы объяснить сообществу область использования. Максимум 200 символов.
+
+      .form-group.label-floating
+        label.control-label Веб-сайт
+        input.form-control type='text'
+        p.help-block
+          | Веб-сайт вашего приложения, ссылка на репозиторий на 
+          a href='https://github.com' github.com
+          |  и т.д.
+          
+      .form-group.label-floating
+        label.control-label Секретный ключ
+        input.form-control type='text' value='M3bKkgMWKvIc7Kl6qYlH6FdO4' disabled=true title='Токен для доступа к данным портала и сбора статистики.'
+        p.help-block Токен для доступа к данным портала и сбора статистики.
+
+      .form-group
+        button.btn.btn-primary.btn-fab title='Создать' type='button'
+          i.material-icons add
+        button.btn.btn-default.btn-fab title='Отмена' type='button'
+          i.material-icons cancel
