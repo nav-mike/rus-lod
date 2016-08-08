@@ -32,6 +32,9 @@ gem 'react-rails', '~> 1.7.0'
 gem 'rails-backbone'
 gem 'underscore-rails'
 
+# editor
+gem 'jquery-ace-rails'
+
 # fake data
 gem 'faker'
 
