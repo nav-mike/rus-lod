@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'api/index'
+
   get 'data/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   get '/mappings' => 'mappings#index'
   get '/mappings/new' => 'mappings#new'
   get '/data' => 'data#index'
+  get '/apis' => 'api#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
