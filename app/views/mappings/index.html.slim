@@ -1,0 +1,23 @@
+h1 Список маппинг файлов
+
+table.table.table-hover.table-striped
+  thead
+    tr
+      th
+      th file name
+      th description
+      th author
+      th
+  tbody
+    - 7.times do
+      tr
+        td
+          a href='#' title='Посмотреть файл'
+            = fa_icon 'file-o'
+        td filename.sml
+        td Файл преобразования данных
+        td Mikhail Navrotskiy
+        td
+          button.btn.btn-danger.btn-xs type='button' title='Удалить файл'
+            = fa_icon 'trash'
+
