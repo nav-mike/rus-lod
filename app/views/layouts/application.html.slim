@@ -24,8 +24,30 @@ html
           ul.nav.navbar-nav
             li
               a href='/mappings' Маппинги
-            li
-              a href='/data' Данные
+            li.dropdown
+              a.dropdown-toggle href='#' data-target='#' data-toggle='dropdown'
+                | Данные
+                b.caret
+              ul.dropdown-menu
+                li
+                  a href='/data' Список открытых данных
+                li.divider
+                li
+                  a href='/data/courses' Открытые образовательные ресурсы
+                li
+                  a href='/data/staff' Сотрудники университета
+                li
+                  a href='/data/publications' Научные публикации
+                li
+                  a href='/data/projects' Исследовательские проекты
+                li
+                  a href='/data/structure' Организационная структура университета
+                li
+                  a href='/data/events' Новости и события
+                li
+                  a href='/data/buildings' Корпуса университета
+                li
+                  a href='/data/applications' Приложения, которые используют данные портала
             li
               a href='/apis' API
             li
