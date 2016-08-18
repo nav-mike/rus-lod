@@ -38,6 +38,11 @@ gem 'underscore-rails'
 
 gem 'material_icons'
 
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+gem 'puma'
+
 # editor
 gem 'jquery-ace-rails'
 
