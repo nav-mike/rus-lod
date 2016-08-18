@@ -48,10 +48,18 @@ html
                   a href='/data/buildings' Корпуса университета
                 li
                   a href='/data/applications' Приложения, которые используют данные портала
-            li
-              a href='/apis' API
-            li
-              a href='/applications' Приложения
+            li.dropdown
+              a.dropdown-toggle href='#' data-target='#' data-toggle='dropdown'
+                | API
+                b.caret
+              ul.dropdown-menu
+                li
+                  a href='/apis' Общее описание API
+                li.divider
+                li
+                  a href='/apis#sparql' SPARQL endpoint
+                li
+                  a href='/apis#rest' REST
             li
               a href='/visualization' Визуализация
             li
