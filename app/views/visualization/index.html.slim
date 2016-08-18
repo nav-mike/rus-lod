@@ -1,2 +1,15 @@
-h1 Visualization#index
-p Find me in app/views/visualization/index.html.slim
+.page-header
+  h1 Визуализация
+
+.container.main-content
+  .row
+    p Использование открытых данных позволяет решать ряд задач по визуализации этих данных
+
+    h3 Laboratory Heatmap
+    p Разработчиками Портала Открытых Данных Университета ИТМО разработан пример визуализации открытых данных: Карта Лабораторий.
+    a href='http://lod.ifmo.ru/usecases/heatmap.html' target='_blank'
+      = image_tag asset_path('map'), width: '90%'
+
+    p
+      | Другими примерами визуализации могут стать: карта корпусов университета, графики научных публикаций,
+      |  карта аудиторий и подразделений университета
