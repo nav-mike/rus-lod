@@ -31,5 +31,9 @@ module RusLod
       g.assets false
       g.helper false
     end
+    
+    config.to_prepare do
+      Devise::SessionsController.layout "devise"
+    end
   end
 end
