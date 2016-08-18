@@ -1,2 +1,43 @@
-h1 Statistics#index
-p Find me in app/views/statistics/index.html.slim
+.page-header
+  h1 Статистика использования датасетов
+
+.container.main-content
+  .row
+    p Раздел описывает статистику использования датасетов различными приложениями.
+    table.table.table-hover.table-stripped
+      thead
+        tr
+          th Название
+          th Ссылка
+          th Количество запросов от приложения
+          th Список используемых датасетов
+      tbody
+        tr
+          td Сайт кафедры ИПМ
+          td
+            a href='http://ipm.ifmo.ru' target='_blank' http://ipm.ifmo.ru
+          td= Faker::Number.number(2)
+          td
+            ul
+              li подразделения университета
+              li сотрудники
+              li проекты
+              li публикации
+        tr
+          td Портал поиска по датасетам
+          td
+            a href='https://lod-ifmo-search.herokuapp.com' target='_blank' https://lod-ifmo-search.herokuapp.com
+          td= Faker::Number.number(2)
+          td
+            ul
+              li подразделения университета
+              li сотрудники
+              li области исследований
+        tr
+          td Портал Проекта Связанного Открытого Университета
+          td
+            a href='https://lu-itmo.herokuapp.com' target='_blank' https://lu-itmo.herokuapp.com
+          td= Faker::Number.number(2)
+          td
+            ul
+              li публикации
