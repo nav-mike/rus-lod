@@ -22,8 +22,9 @@ html
           a.navbar-brand href='/' Портал Открытых Данных Российских Университетов
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li
-              a href='/mappings' Маппинги
+            - if current_user.present?
+              li
+                a href='/mappings' Маппинги
             li.dropdown
               a.dropdown-toggle href='#' data-target='#' data-toggle='dropdown'
                 | Данные
