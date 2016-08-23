@@ -26,8 +26,9 @@ Rails.application.routes.draw do
   get '/mappings/new' => 'mappings#new'
   get '/data' => 'data#index'
   get '/apis' => 'api#index'
-  get '/data/applications' => 'applications#index'
-  get '/data/applications/new' => 'applications#new'
+  scope '/data' do
+    resources :applications, except: :show
+  end
   get '/visualization' => 'visualization#index'
   get '/statistics' => 'statistics#index'
   get '/about' => 'about#index'
