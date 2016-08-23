@@ -26,6 +26,14 @@ class ApplicationsController < ApplicationController
     @application = Application.find params[:key]
   end
 
+  def update
+    @application = Application.new application_params
+    @application.update
+    redirect_to '/data/applications'
+  rescue => e
+    @error = e.message
+  end
+
   def destroy
     @application.destroy
     redirect_to '/data/applications'

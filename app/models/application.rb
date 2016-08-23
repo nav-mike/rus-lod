@@ -39,4 +39,13 @@ class Application < Api
     http.use_ssl = true
     http.request req
   end
+
+  def update
+    uri = URI(self.class.url("applications/#{@key}.json"))
+    req = Net::HTTP::Put.new(uri, 'Content-type' => 'application/json')
+    req.body = self.to_json
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.request req
+  end
 end
