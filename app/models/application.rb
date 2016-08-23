@@ -17,6 +17,11 @@ class Application < Api
     result
   end
 
+  def self.find(key)
+    response = Net::HTTP.get(URI(url("applications/#{key}.json")))
+    Application.new JSON.parse(response)
+  end
+
   def save!
     uri = URI(self.class.url('applications.json'))
     req = Net::HTTP::Post.new(uri, 'Content-type' => 'application/json')

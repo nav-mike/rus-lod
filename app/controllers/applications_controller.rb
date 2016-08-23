@@ -22,6 +22,10 @@ class ApplicationsController < ApplicationController
     @error = e.message
   end
 
+  def edit
+    @application = Application.find params[:key]
+  end
+
   def destroy
     @application.destroy
     redirect_to '/data/applications'
