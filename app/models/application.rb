@@ -17,7 +17,7 @@ class Application
     end
     result
   end
-  
+
   def self.prod
     'http://api-lod-itmo.herokuapp.com/applications.json'
   end

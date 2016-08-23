@@ -2,7 +2,7 @@ h1 Добавить новое приложение
 
 .container
   .col-md-7.col-md-offset-1
-    form.form-horizontal
+    =form_tag '/data/applications', method: 'post', class: 'form-horizontal'
       .form-group.label-floating
         label.control-label Название
         input.form-control type='text'
@@ -23,11 +23,11 @@ h1 Добавить новое приложение
           
       .form-group.label-floating
         label.control-label Секретный ключ
-        input.form-control type='text' value='M3bKkgMWKvIc7Kl6qYlH6FdO4' disabled=true title='Токен для доступа к данным портала и сбора статистики.'
+        input.form-control type='text' value='#{@key}' disabled=true title='Токен для доступа к данным портала и сбора статистики.'
         p.help-block Токен для доступа к данным портала и сбора статистики.
 
       .form-group
-        button.btn.btn-primary.btn-fab title='Создать' type='button'
+        button.btn.btn-primary.btn-fab title='Создать' type='submit'
           i.material-icons add
-        button.btn.btn-default.btn-fab title='Отмена' type='button'
+        a.btn.btn-default.btn-fab title='Отмена' type='button' href='/data/applications'
           i.material-icons cancel
