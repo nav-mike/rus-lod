@@ -24,6 +24,6 @@
 $(document).ready(function() {
   $.material.init();
 
-   $('.my-code-area').ace({ theme: 'github', lang: 'sql' })
+  $('.my-code-area').ace({ theme: 'github', lang: 'sql' })
 });
 

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'mappings#index'
+  root 'about#index'
 
   get '/mappings' => 'mappings#index'
   get '/mappings/new' => 'mappings#new'
