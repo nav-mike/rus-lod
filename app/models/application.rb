@@ -1,4 +1,4 @@
-class Application
+class Application < Api
   attr_accessor :name, :link, :key, :description
 
   def initialize(options)
@@ -9,8 +9,7 @@ class Application
   end
 
   def self.all
-    url = Rails.env.production? ? prod : dev
-    response = Net::HTTP.get(URI(url))
+    response = Net::HTTP.get(URI(url('applications.json')))
     result = Array.new
     JSON.parse(response).each do |app|
       result << (Application.new app)
@@ -18,11 +17,12 @@ class Application
     result
   end
 
-  def self.prod
-    'http://api-lod-itmo.herokuapp.com/applications.json'
-  end
-  
-  def self.dev
-    'https://api-lod-itmo-nav-mike.c9users.io/applications.json'
+  def save!
+    uri = URI(self.class.url('applications.json'))
+    req = Net::HTTP::Post.new(uri, 'Content-type' => 'application/json')
+    req.body = self.to_json
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    response = http.request(req)
   end
 end

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def api_path
     if Rails.env.production?
-      'http://api-lod-itmo.herokuapp.com/'
+      'https://api-lod-itmo.herokuapp.com/'
     else
       'https://api-lod-itmo-nav-mike.c9users.io/'
     end

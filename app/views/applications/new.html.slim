@@ -5,17 +5,17 @@ h1 Добавить новое приложение
     =form_tag '/data/applications', method: 'post', class: 'form-horizontal'
       .form-group.label-floating
         label.control-label Название
-        input.form-control type='text'
+        input#application_name.form-control type='text' name='application[name]'
         p.help-block Название вашего приложения. Максимум 32 символа.
 
       .form-group.label-floating
         label.control-label Описание
-        input.form-control type='text'
+        input#application_description.form-control type='text' name='application[description]'
         p.help-block Описание вашего приложения. Используйте его, чтобы объяснить сообществу область использования. Максимум 200 символов.
 
       .form-group.label-floating
         label.control-label Веб-сайт
-        input.form-control type='text'
+        input#application_link.form-control type='text' name='application[link]'
         p.help-block
           | Веб-сайт вашего приложения, ссылка на репозиторий на 
           a href='https://github.com' github.com
@@ -23,7 +23,7 @@ h1 Добавить новое приложение
           
       .form-group.label-floating
         label.control-label Секретный ключ
-        input.form-control type='text' value='#{@key}' disabled=true title='Токен для доступа к данным портала и сбора статистики.'
+        input#application_key.form-control name='application[key]' type='text' value='#{@key}' readonly=true title='Токен для доступа к данным портала и сбора статистики.'
         p.help-block Токен для доступа к данным портала и сбора статистики.
 
       .form-group
