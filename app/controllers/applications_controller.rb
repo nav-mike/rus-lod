@@ -1,4 +1,6 @@
 class ApplicationsController < ApplicationController
+  before_action :set_application, only: %i(edit update destroy)
+
   def index
     @apps = Application.all
   rescue => e
@@ -17,11 +19,22 @@ class ApplicationsController < ApplicationController
     @application.save!
     redirect_to '/data/applications'
   rescue => e
+    @error = e.message
+  end
+
+  def destroy
+    @application.destroy
+    redirect_to '/data/applications'
+  rescue => e
     byebug
     @error = e.message
   end
 
   private
+
+  def set_application
+    @application = Application.new key: params[:key]
+  end
 
   def application_params
     params.require(:application).permit(:name, :description, :link, :key)

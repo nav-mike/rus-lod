@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get '/data' => 'data#index'
   get '/apis' => 'api#index'
   scope '/data' do
-    resources :applications, except: :show
+    resources :applications, param: :key, except: :show, constraints: {key: /[a-zA-Z0-9]+/}
   end
   get '/visualization' => 'visualization#index'
   get '/statistics' => 'statistics#index'
