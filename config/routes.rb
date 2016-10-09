@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'publications/index'
+
   devise_for :users
   get 'contacts/index'
 
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   get '/mappings/new' => 'mappings#new'
   get '/data' => 'data#index'
   get '/apis' => 'api#index'
+  get '/publications' => 'publications#index'
   scope '/data' do
     resources :applications, param: :key, except: :show, constraints: {key: /[a-zA-Z0-9]+/}
   end
