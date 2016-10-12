@@ -1,7 +1,6 @@
 require 'simplecov'
 require 'capybara/rspec'
 require 'rspec/json_expectations'
-require 'webmock/rspec'
 require 'faker'
 SimpleCov.start 'rails'
 
