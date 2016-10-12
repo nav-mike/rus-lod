@@ -17,3 +17,7 @@
 /tmp
 
 routes.txt
+
+/coverage
+
+.byebug_history
