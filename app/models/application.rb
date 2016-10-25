@@ -10,7 +10,7 @@ class Application < Api
 
   def self.all
     response = Net::HTTP.get(URI(url('applications.json')))
-    result = Array.new
+    result = []
     JSON.parse(response).each do |app|
       result << (Application.new app)
     end
@@ -25,10 +25,11 @@ class Application < Api
   def save!
     uri = URI(self.class.url('applications.json'))
     req = Net::HTTP::Post.new(uri, 'Content-type' => 'application/json')
-    req.body = self.to_json
+    req.body = to_json
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     response = http.request(req)
+    response
   end
 
   def destroy
@@ -43,7 +44,7 @@ class Application < Api
   def update
     uri = URI(self.class.url("applications/#{@key}.json"))
     req = Net::HTTP::Put.new(uri, 'Content-type' => 'application/json')
-    req.body = self.to_json
+    req.body = to_json
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     http.request req

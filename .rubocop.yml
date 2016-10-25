@@ -1,0 +1,47 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'config/**/*'
+
+Rails:
+  Enabled: true
+
+Metrics/ClassLength:
+  Max: 100
+
+Metrics/ModuleLength:
+  Max: 100
+
+Metrics/LineLength:
+  Max: 200
+  Exclude:
+    - 'db/seeds.rb'
+
+Metrics/MethodLength:
+  Max: 50
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Style/Documentation:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Rails/Output:
+  Exclude:
+    - 'db/seeds.rb'
+    - 'db/seeds/development.rb'
+
