@@ -68,6 +68,8 @@ gem 'rails_12factor', group: :production
 
 gem 'rubocop', require: false
 
+gem 'slim_lint', require: false
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

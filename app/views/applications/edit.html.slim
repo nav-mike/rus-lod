@@ -2,32 +2,51 @@ h1= "Изменить приложение #{@application.key}"
 
 .container
   .col-md-7.col-md-offset-1
-    =form_tag "/data/applications/#{@application.key}", method: 'put', class: 'form-horizontal'
+    form.form-horizontal[action="/data/applications/#{@application.key}"
+      method='post']
+      input[type="hidden"
+        name="_method"
+        value="put"]
       .form-group.label-floating
         label.control-label Название
-        input#application_name.form-control type='text' name='application[name]' value="#{@application.name}"
+        input#application_name.form-control[type='text'
+          name='application[name]'
+          value="#{@application.name}"]
         p.help-block Название вашего приложения. Максимум 32 символа.
 
       .form-group.label-floating
         label.control-label Описание
-        input#application_description.form-control type='text' name='application[description]'  value="#{@application.description}"
-        p.help-block Описание вашего приложения. Используйте его, чтобы объяснить сообществу область использования. Максимум 200 символов.
+        input#application_description.form-control[type='text'
+          name='application[description]'
+          value="#{@application.description}"]
+        p.help-block
+          | Описание вашего приложения.
+          |  Используйте его, чтобы объяснить сообществу область использования.
+          |  Максимум 200 символов.
 
       .form-group.label-floating
         label.control-label Веб-сайт
-        input#application_link.form-control type='text' name='application[link]'  value="#{@application.link}"
+        input#application_link.form-control[type='text'
+          name='application[link]'
+          value="#{@application.link}"]
         p.help-block
-          | Веб-сайт вашего приложения, ссылка на репозиторий на 
+          | Веб-сайт вашего приложения, ссылка на репозиторий на
           a href='https://github.com' github.com
           |  и т.д.
-          
+
       .form-group.label-floating
         label.control-label Секретный ключ
-        input#application_key.form-control name='application[key]' type='text'value="#{@application.key}" readonly=true title='Токен для доступа к данным портала и сбора статистики.'
+        input#application_key.form-control[name='application[key]'
+          type='text'
+          value="#{@application.key}"
+          readonly=true
+          title='Токен для доступа к данным портала и сбора статистики.']
         p.help-block Токен для доступа к данным портала и сбора статистики.
 
       .form-group
         button.btn.btn-primary.btn-fab title='Создать' type='submit'
           i.material-icons save
-        a.btn.btn-default.btn-fab title='Отмена' type='button' href='/data/applications'
+        a.btn.btn-default.btn-fab[title='Отмена'
+          type='button'
+          href='/data/applications']
           i.material-icons cancel

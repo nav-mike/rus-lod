@@ -3,7 +3,9 @@
 
 .container.main-content
   .row
-    p Раздел описывает статистику использования датасетов различными приложениями.
+    p
+      | Раздел описывает статистику использования
+      |  датасетов различными приложениями.
     table.table.table-hover.table-stripped
       thead
         tr
@@ -26,7 +28,9 @@
         tr
           td Портал поиска по датасетам
           td
-            a href='https://lod-ifmo-search.herokuapp.com' target='_blank' https://lod-ifmo-search.herokuapp.com
+            a[href='https://lod-ifmo-search.herokuapp.com'
+              target='_blank']
+              | https://lod-ifmo-search.herokuapp.com
           td= Faker::Number.number(2)
           td
             ul
@@ -36,7 +40,9 @@
         tr
           td Портал Проекта Связанного Открытого Университета
           td
-            a href='https://lu-itmo.herokuapp.com' target='_blank' https://lu-itmo.herokuapp.com
+            a[href='https://lu-itmo.herokuapp.com'
+              target='_blank']
+              | https://lu-itmo.herokuapp.com
           td= Faker::Number.number(2)
           td
             ul
