@@ -31,9 +31,12 @@ module RusLod
       g.assets false
       g.helper false
     end
-    
+
     config.to_prepare do
       Devise::SessionsController.layout "devise"
     end
+
+    # config lod.api
+    config.x.lod_ifmo_api_url = 'http://api-lod-itmo.herokuapp.com'
   end
 end
