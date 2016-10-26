@@ -45,6 +45,10 @@ gem 'puma'
 # editor
 gem 'jquery-ace-rails'
 
+# REST
+gem 'faraday'
+gem 'faraday_middleware'
+
 # fake data
 gem 'faker'
 
