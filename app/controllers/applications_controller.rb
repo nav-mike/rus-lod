@@ -38,7 +38,6 @@ class ApplicationsController < ApplicationController
     @application.destroy
     redirect_to '/data/applications'
   rescue => e
-    byebug
     @error = e.message
   end
 

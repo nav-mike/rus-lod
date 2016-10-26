@@ -5,7 +5,9 @@ html
     meta content='IE=edge' http-equiv='X-UA-Compatible'
     meta content='width=device-width, initial-scale=1' name='viewport'
     title Портал Открытых Данных Российских Университетов
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application',
+                          media: 'all',
+                          'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
@@ -14,12 +16,16 @@ html
     nav.navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
-          button.navbar-toggle.collapsed aria-controls='navbar' aria-expanded='false' data-toggle='collapse' type='button'
+          button.navbar-toggle.collapsed[aria-controls='navbar'
+            aria-expanded='false'
+            data-toggle='collapse'
+            type='button']
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href='/' Портал Открытых Данных Российских Университетов
+          a.navbar-brand href='/'
+            | Портал Открытых Данных Российских Университетов
 
     .container style='padding-top: 40px; padding-bottom: 60px;'
       == yield

@@ -11,36 +11,44 @@
   .page-header
     h3#sparql SPARQL endpoint
 
-    p 
+    p
       | SPARQL endpoint — это служба, поддерживающая протокол запросов SPARQL.
       |  Точка доступа позволяет делать запросы к базе открытых данных.
-      |  Сервер обрабатывает запрос и возвращает ответ в машинно-читаемом, формате (RDF, XML, JSON).
+      |  Сервер обрабатывает запрос
+      |  и возвращает ответ в машинно-читаемом,
+      |  формате (RDF, XML, JSON).
     p
       | Для доступа к SPARQL endpoint Портала Открытых Данных Университета ИТМО:
       code http://lod.ifmo.ru/sparql
     p
-      | Например, на языке ruby использование 
-      a href='https://github.com/digibib/rdf-virtuoso' target='_blank'  SPARQL endpoint
+      | Например, на языке ruby использование
+      a[href='https://github.com/digibib/rdf-virtuoso'
+        target='_blank']
+        | SPARQL endpoint
       | :
 
     p
       pre
-        code= @c.html_safe
+        code== @c
 
   .page-header
     h3#rest REST
 
     p
-      | REST (Representational state transfer) – это стиль архитектуры программного обеспечения для распределенных систем,
-      |  таких как World Wide Web, который, как правило, используется для построения веб-служб.
-      |  Термин REST был введен в 2000 году Роем Филдингом, одним из авторов HTTP-протокола.
+      | REST (Representational state transfer) –
+      |  это стиль архитектуры программного
+      |  обеспечения для распределенных систем,
+      |  таких как World Wide Web, который, как правило,
+      |  используется для построения веб-служб.
+      |  Термин REST был введен в 2000 году Роем Филдингом,
+      |  одним из авторов HTTP-протокола.
 
     p Описание доступа к REST API Портала Открытых Данных Университета ИТМО.
     p
       | URL доступа:
       code https://api-lod-itmo.herokuapp.com/
-    p 
-      | Во всех описанных далее случаях, используется 
+    p
+      | Во всех описанных далее случаях, используется
       code  GET
       |  запрос и в результате приходит ответ, содержащий
       code  json
@@ -82,4 +90,3 @@
       | Получение данных по научному направлению, используя id:
       p
         code https://api-lod-itmo.herokuapp.com/research_areas/749.json
-    

@@ -24,6 +24,7 @@ table.table.table-hover.table-striped
         td= Faker::Lorem.sentence
         td= Faker::Name.name
         td
-          button.btn.btn-danger.btn-xs.btn-raised type='button' title='Удалить файл'
+          button.btn.btn-danger.btn-xs.btn-raised[type='button'
+            title='Удалить файл']
             = fa_icon 'trash'
 

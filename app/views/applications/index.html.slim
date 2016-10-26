@@ -2,7 +2,8 @@
   h1 Приложения
 
 p
-  a.btn.btn-info.btn-fab href='/data/applications/new' title='Добавить приложение'
+  a.btn.btn-info.btn-fab[href='/data/applications/new'
+    title='Добавить приложение']
     i.material-icons add
 
 table.table.table-hover.table-striped
@@ -21,8 +22,14 @@ table.table.table-hover.table-striped
           a href='#{app.link}' target='_blank'
             = app.link
         td
-          = link_to "/data/applications/#{app.key}/edit", class: 'btn btn-warning btn-xs btn-raised', title: 'Изменить приложение' do
+          = link_to "/data/applications/#{app.key}/edit",
+                    class: 'btn btn-warning btn-xs btn-raised',
+                    title: 'Изменить приложение' do
             = fa_icon 'pencil'
         td
-          = link_to "/data/applications/#{app.key}", method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger btn-xs btn-raised', title: 'Удалить приложение' do
+          = link_to "/data/applications/#{app.key}",
+                    method: :delete,
+                    data: {confirm: 'Вы уверены?'},
+                    class: 'btn btn-danger btn-xs btn-raised',
+                    title: 'Удалить приложение' do
             = fa_icon 'trash'
