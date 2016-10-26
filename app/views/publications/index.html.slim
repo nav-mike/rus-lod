@@ -2,36 +2,9 @@
   h1 Список публикаций по тематике проекта
 
 ul
-  li
-    | Ermilov, I., Höffner, K., Lehmann, J., Mouromtsev, D.
-    |  kOre: Using Linked Data for OpenScience Information Integration,
-    |  SEMANTiCS 2015, (2015)
-    a href='https://goo.gl/6gNhqd' target='_blank'
-      = fa_icon 'external-link fw'
-  li
-    | Муромцев Д.И., Леманн Й., Семерханов И.А., Навроцкий М.А., Ермилов И.С.
-    |  Исследование актуальных способов публикации
-    |  открытых научных данных в сети
-    |  // Научно-технический вестник информационных технологий,
-    |  механики и оптики.
-    |  2015. Том 15. № 6. С. 1081–1087.
-    a href='https://goo.gl/wBhqBJ' target='_blank'
-      = fa_icon 'external-link fw'
-  li
-    | Navrotskiy M., Zhukova N.
-    |  Scientific portal of university department-shaping
-    |  research area of users through their behavior
-    |  // CEUR Workshop Proceedings - 2016, Vol. 1627, pp. 101-110
-    a href='https://goo.gl/jYdM3Z' target='_blank'
-      = fa_icon 'external-link fw'
-  li
-    | Радченко И. А., Навроцкий М. А.
-    |  Связанные открытые данные в университете
-    |  // Linux Vacation / Eastern Europe 2016 (LVEE)
-    a[href='https://goo.gl/mKEbU8'
-      target='_blank']
-      = fa_icon 'external-link fw'
-  li
-    | Karmanovskiy N., Mouromtsev D., Navrotskiy M., Pavlov D., Radchenko I.
-    |  A Case Study of Open Science Concept: Linked Open Data in University
-    |  // DTGS 2016 - 2016, Vol. 674
+  - @result.each do |item|
+    li
+      span= item['title']
+      - if item['link']
+        = link_to item['link'], target: '_blank' do
+          = fa_icon 'external-link fw'
