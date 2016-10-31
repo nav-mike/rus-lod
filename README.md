@@ -18,12 +18,12 @@ This project include public pages for http://lod.ifmo.ru/ project.
 
 * Dataverse – это проект Университета Гарварда. Веб-приложение для публикации и анализа исследовательских результатов, которое базируется на пользовательских решениях для хранения данных.
 
-### Сценарии работы
+### Scenarios
 
-Описание процедуры публикации данных:
+Algorithm for publish data:
 
-1. Специалист предметной области разрабатывает алгоритм преобразования (отображения) данных из БД университета в набор данных RDF, используя так называемый маппинг-файл, указывает связи между данными.
+1. Knowledge specialist develops and appends mapping files with SML language.
 
-1. Система проводит выгрузку данных из БД университета и преобразует их в RDF-формат с использованием программного средства sparqlify.
+1. App downloads data from university database and transforms it to RDF with sparqlify tools.
 
-1. Происходит загрузка данных (RDF) в Virtuoso Universal Server.
+1. Tools upload data (RDF) to Virtuoso Server.
