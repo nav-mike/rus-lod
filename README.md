@@ -6,17 +6,17 @@ This project include public pages for http://lod.ifmo.ru/ project.
 
 Портал открытых данных - это портал с web интерфейсом и API для более легкого повторного использования открытых данных, представленных в стандартизованном виде.Как и библиотечные каталоги, портал содержит записи метаданных для датасетов, опубликованных для повторного использования. В сочетании с конкретными функциями поиска, они облегчают поиск датасетов, представляющих интерес.Порталы открыты данных - это важный элемент большинства инициатив открытых данных. Поддерживая политику, обеспечения легкого доступа к опубликованной информации, они также могут использоваться как катализатор публикации данныхм большего количества и лучшего качества, что в конечном итоге предоставляет принципиально новые возможности для анализа данных. В тоже время открытые данные позволяют всем заинтересованым пользователям получить ответы на их запросы, без необходимости огранизациям тратить время на удовлетворение каждого запроса.
 
-### Зарубежные аналоги
+### Analogues
 
-Для публикации университетских данных существуют следующие системы:
+These systems was developed for publishing universities data:
 
-* VIVO – это стек технологий для построения междисциплинарной сети. Проект выделяется среди других систем из-за его широкого внедрения в научное сообщество и использования семантических веб-технологий. Первоначально он был разработан для интеграции данных внутри университета Корнелл в 2006 году. Проект VIVO был продлен в 2009 году для поддержки кросс-университетской интеграции данных.
+* VIVO project stands out among the other systems due to its wide adoption in the scientific community and the use of semantic web technologies. It was originally designed for data integration within the Cornell University in 2006. The VIVO project was extended in 2009 to support cross-University data integration.
 
-* Linked Universities - платформа предоставляется альянсом европейских университетов распространяющих свои данные, программы, курсы и учебные материалы в формате Linked Data.
+* Linked Universities - the platform provided by the Alliance of European universities publish their data, programs, courses and teaching materials in the format of Linked Data.
 
-* ResearchGate – это приложение для международного сообщества исследователей. Оно поддерживает более широкое распространение публикаций в формате PDF, предоставляя к ним доступ более чем 2 000 000 пользователям.
+* ResearchGate – this app is for the international community of researchers. It supports the broader dissemination of publications in PDF format, providing access to more than 2 000 000 users.
 
-* Dataverse – это проект Университета Гарварда. Веб-приложение для публикации и анализа исследовательских результатов, которое базируется на пользовательских решениях для хранения данных.
+* Dataverse is a project of Harvard University. A web application for publishing and analysing research results, which is based on custom storage solutions.
 
 ### Scenarios
 
