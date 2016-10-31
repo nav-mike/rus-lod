@@ -2,9 +2,15 @@
 
 This project include public pages for http://lod.ifmo.ru/ project.
 
-### Основные понятия
+### Basic concepts
 
-Портал открытых данных - это портал с web интерфейсом и API для более легкого повторного использования открытых данных, представленных в стандартизованном виде.Как и библиотечные каталоги, портал содержит записи метаданных для датасетов, опубликованных для повторного использования. В сочетании с конкретными функциями поиска, они облегчают поиск датасетов, представляющих интерес.Порталы открыты данных - это важный элемент большинства инициатив открытых данных. Поддерживая политику, обеспечения легкого доступа к опубликованной информации, они также могут использоваться как катализатор публикации данныхм большего количества и лучшего качества, что в конечном итоге предоставляет принципиально новые возможности для анализа данных. В тоже время открытые данные позволяют всем заинтересованым пользователям получить ответы на их запросы, без необходимости огранизациям тратить время на удовлетворение каждого запроса.
+The open data portal is a portal with web interface and API for easier reuse of open data represented in a standardized form.
+As library catalogs, the portal contains metadata records for datasets that are published for reuse.
+In combination with specific search functions, they facilitate the search of datasets.
+Portals open data is an important element of most initiatives on open data.
+Supporting policies, provide easy access to published information, they can also be used as a catalyst of data publication of more and better quality,
+which ultimately provides new opportunities for data analysis.
+At the same time, open data allows all interested users to get answers to their queries, without forcing the organizations to waste time on satisfaction for each request.
 
 ### Analogues
 
