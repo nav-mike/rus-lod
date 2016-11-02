@@ -1,10 +1,16 @@
 class SearchController < ApplicationController
+  before_action :make_type, only: :detail
+  before_action :make_id, only: :detail
+
   def index
     labs = all_labs
     people = all_people
     rarea = all_research_area
 
     @result = labs | people | rarea
+  end
+
+  def detail
   end
 
   def data
@@ -16,6 +22,17 @@ class SearchController < ApplicationController
   end
 
   private
+
+  def make_type
+    @type = :other
+    @type = :laboratory if (params[:q] =~ /Laboratory\d+/).present?
+    @type = :person if (params[:q] =~ /Person\d+/).present?
+    @type = :research_area if (params[:q] =~ /ResearchArea\d+/).present?
+  end
+
+  def make_id
+    @id = params[:q][/\d+/, 0]
+  end
 
   # get all laboratories
   # PREFIX vivoplus:<http://vivoplus.aksw.org/ontology#>

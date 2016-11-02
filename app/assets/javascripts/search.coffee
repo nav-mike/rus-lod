@@ -7,7 +7,7 @@ $(document).ready () ->
     current = $input.typeahead("getActive")
     if current
       if current.name == $input.val()
-        window.location.href = current.id
+        window.location.href = "/search/result?q=#{current.id}"
       else
         console.log "not redirect to #{current}"
     else
