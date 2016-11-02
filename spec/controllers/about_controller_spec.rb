@@ -12,12 +12,6 @@ describe RusLod::AboutController, type: :controller do
   end
 
   context 'routing' do
-    it 'get /' do
-      expect(get: '/').to route_to(
-        controller: 'about', action: 'index'
-      )
-    end
-
     it 'get /about/index' do
       expect(get: '/about/index').to route_to(
         controller: 'about', action: 'index'
