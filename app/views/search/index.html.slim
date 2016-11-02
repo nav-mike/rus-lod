@@ -1,0 +1,23 @@
+.container style='padding-top: 25px'
+  .row.vcenter
+    .search-logo
+      .text-center
+        .logo.main
+          img src="#{asset_path 'logo.png'}"
+
+    form role='form' method='GET' action='search' novalidate=true
+      .input-group data-json="#{render template: 'search/data.json'}"
+        input.typeahead.form-control#search type='text' name='q' placeholder='Поиск...' data-provide='typehead' autocomplete='off'
+        span.input-group-btn
+          button.btn.btn-primary.btn-raised#srchBtn type='button'
+            i.material-icons search
+            |  Поиск
+          .modal.js-loading-bar
+            .modal-dialog
+              .modal-content
+                .modal-body
+                  .progress.progress-popup
+                    .progress-bar
+
+javascript:
+  window.data = $.parseJSON( $('.input-group').attr('data-json') );

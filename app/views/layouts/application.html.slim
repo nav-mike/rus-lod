@@ -4,7 +4,7 @@ html
     meta charset='utf-8'
     meta content='IE=edge' http-equiv='X-UA-Compatible'
     title
-      | Портал Открытых Данных Российских Университетов
+      | Портал Открытых Данных Университета ИТМО
     = stylesheet_link_tag 'application',
                            media: 'all',
                            'data-turbolinks-track' => true
@@ -28,7 +28,7 @@ html
             a.navbar-brand href='/' LOD Портал
           - else
             a.navbar-brand href='/'
-              | Портал Открытых Данных Российских Университетов
+              | Портал Открытых Данных Университета ИТМО
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             - if current_user.present?

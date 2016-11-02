@@ -68,6 +68,9 @@ group :development, :test do
   gem 'capybara-screenshot', group: :test
 end
 
+# LOD
+gem 'rdf-virtuoso'
+
 gem 'rails_12factor', group: :production
 
 gem 'rubocop', require: false
