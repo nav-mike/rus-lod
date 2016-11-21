@@ -1,1 +1,4 @@
-pre= @id
+- if @type.to_sym == :person
+  = render partial: 'person'
+- else
+  p undefined

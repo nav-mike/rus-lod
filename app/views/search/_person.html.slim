@@ -1,0 +1,64 @@
+pre= @data
+
+.page-header
+  .container
+    .row
+      .col-md-11
+        h2= "#{@data['last_name']} #{@data['first_name']} #{@data['middle_name']}"
+      .col-md-1
+        .text-right
+          a href='http://lod.ifmo.ru/data/Person#{@id}' title='RDF data'
+            img src='http://lod.ifmo.ru/static/rdf-icon.gif'
+
+div
+  ul.nav.nav-tabs role='tablist'
+    li.active role='presentation' style='background-color: #3399ff; margin-bottom: 0px;'
+      a href='#html' aria-controls='html' role='tab' data-toggle='tab'
+        = fa_icon 'fw html5', text: 'HTML'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/page/Person#{@id}'
+        = fa_icon 'fw code-fork', text: 'Pubby'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/data/Person#{@id}?output=ttl'
+        = fa_icon 'fw codepen', text: 'Turtle'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/data/Person#{@id}?output=xml'
+        = fa_icon 'fw code', text: 'RDF/XML'
+    li role='presentation'
+      a href='https://api-lod-itmo.herokuapp.com/people/125197.json'
+        = fa_icon 'fw rocket', text: 'JSON'
+
+.tab-content
+    .tab-pane.active#html role='tabpanel'
+      .well.well-lg
+        dl.dl-horizontal.person-detail
+          p
+            dt title='Персональный идентификатор' ID:
+            dd= @id
+        
+          p
+            dt Фамилия:
+            dd= @data['last_name']
+          
+          p
+            dt Имя:
+            dd= @data['first_name']
+          
+          p
+            dt Отчество:
+            dd= @data['middle_name']
+          
+          
+          p
+            dt Ученая степень:
+            dd= academic_qualification @data['academic_qualification']
+          
+          p
+            dt Ученое звание:
+            dd= academic_status @data['academic_status']
+          
+          p
+            dt Место работы:
+            dd
+              a href="/search/result?q=#{@data['affiliated_organization']}"
+                = @data['laboratory_name']
