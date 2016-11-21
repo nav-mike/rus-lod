@@ -1,4 +1,6 @@
 - if @type.to_sym == :person
   = render partial: 'person'
+- elsif @type.to_sym == :research_area
+  = render partial: 'research_area'
 - else
   p undefined

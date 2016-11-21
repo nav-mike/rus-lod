@@ -12,6 +12,7 @@ class SearchController < ApplicationController
 
   def detail
     upload_person if @type.to_sym == :person
+    upload_research_area if @type.to_sym == :research_area
   end
 
   def data
@@ -26,6 +27,23 @@ class SearchController < ApplicationController
   
   def upload_person
     url = "#{Rails.configuration.x.lod_ifmo_api_url}/people"
+    
+    conn = Faraday.new(url: url) do |faraday|
+      faraday.adapter Faraday.default_adapter
+      faraday.response :json
+    end
+
+    response = conn.get "#{@id}.json"
+    @data = response.body
+  rescue => e
+    logger.tagged(self.class.to_s, self.class) do
+      logger.error e.message
+      logger.error e.backtrace.join("\n")
+    end
+  end
+  
+  def upload_research_area
+    url = "#{Rails.configuration.x.lod_ifmo_api_url}/research_areas"
     
     conn = Faraday.new(url: url) do |faraday|
       faraday.adapter Faraday.default_adapter

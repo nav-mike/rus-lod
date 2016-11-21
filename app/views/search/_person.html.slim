@@ -1,5 +1,3 @@
-pre= @data
-
 .page-header
   .container
     .row
@@ -25,7 +23,7 @@ div
       a href='http://lod.ifmo.ru/data/Person#{@id}?output=xml'
         = fa_icon 'fw code', text: 'RDF/XML'
     li role='presentation'
-      a href='https://api-lod-itmo.herokuapp.com/people/125197.json'
+      a href='https://api-lod-itmo.herokuapp.com/people/#{@id}.json'
         = fa_icon 'fw rocket', text: 'JSON'
 
 .tab-content
@@ -60,5 +58,5 @@ div
           p
             dt Место работы:
             dd
-              a href="/search/result?q=#{@data['affiliated_organization']}"
+              a href="/search/result?q=#{@data['has_research_area']}"
                 = @data['laboratory_name']

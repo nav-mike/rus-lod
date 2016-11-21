@@ -1,0 +1,45 @@
+.page-header
+  .container
+    .row
+      .col-md-11
+        h2= "#{@data['name']}"
+      .col-md-1
+        .text-right
+          a href='http://lod.ifmo.ru/page/ResearchArea#{@id}' title='RDF data'
+            img src='http://lod.ifmo.ru/static/rdf-icon.gif'
+
+div
+  ul.nav.nav-tabs role='tablist'
+    li.active role='presentation' style='background-color: #3399ff; margin-bottom: 0px;'
+      a href='#html' aria-controls='html' role='tab' data-toggle='tab'
+        = fa_icon 'fw html5', text: 'HTML'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/page/ResearchArea#{@id}'
+        = fa_icon 'fw code-fork', text: 'Pubby'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/data/ResearchArea#{@id}?output=ttl'
+        = fa_icon 'fw codepen', text: 'Turtle'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/data/ResearchArea#{@id}?output=xml'
+        = fa_icon 'fw code', text: 'RDF/XML'
+    li role='presentation'
+      a href='https://api-lod-itmo.herokuapp.com/research_areas/#{@id}.json'
+        = fa_icon 'fw rocket', text: 'JSON'
+
+.tab-content
+    .tab-pane.active#html role='tabpanel'
+      .well.well-lg
+        dl.dl-horizontal.person-detail
+          p
+            dt title='Персональный идентификатор' ID:
+            dd= @id
+        
+          p
+            dt Название:
+            dd= @data['name']
+          
+          p
+            dt Лаборатория:
+            dd
+              a href="/search/result?q=#{@data['affiliated_organization']}"
+                = @data['laboratory_name']
