@@ -1,0 +1,96 @@
+.page-header
+  .container
+    .row
+      .col-md-11
+        h2
+          = @data['ru_name']
+          br
+          small= " #{@data['en_name']}"
+      .col-md-1
+        .text-right
+          a href='http://lod.ifmo.ru/page/Laboratory#{@id}' title='RDF data'
+            img src='http://lod.ifmo.ru/static/rdf-icon.gif'
+
+div
+  ul.nav.nav-tabs role='tablist'
+    li.active role='presentation' style='background-color: #3399ff; margin-bottom: 0px;'
+      a href='#{url_for}' aria-controls='html' role='tab' data-toggle='tab'
+        = fa_icon 'fw html5', text: 'HTML'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/page/Laboratory#{@id}'
+        = fa_icon 'fw code-fork', text: 'Pubby'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/page/Laboratory#{@id}?output=ttl'
+        = fa_icon 'fw codepen', text: 'Turtle'
+    li role='presentation'
+      a href='http://lod.ifmo.ru/page/Laboratory#{@id}?output=xml'
+        = fa_icon 'fw code', text: 'RDF/XML'
+    li role='presentation'
+      a href='https://api-lod-itmo.herokuapp.com/laboratories/#{@id}.json'
+        = fa_icon 'fw rocket', text: 'JSON'
+    li role='presentation'
+      a href= @data['web_page'] target='_blank'
+        = fa_icon 'fw external-link', text: 'Сайт подразделения'
+
+.tab-content
+    .tab-pane.active#html role='tabpanel'
+      .well.well-lg
+        p
+          .row
+            .col-md-2.text-right
+              strong title='Персональный идентификатор' ID:
+            .col-md-10
+              span= @id
+        p
+          .row
+            .col-md-2.text-right
+              strong Название на русском:
+            .col-md-10
+              span= @data['ru_name']
+        p
+          .row
+            .col-md-2.text-right
+              strong Название на английском:
+            .col-md-10
+              span= @data['en_name']
+        p
+          .row
+            .col-md-2.text-right
+              strong Сотрудники:
+            .col-md-10
+              span
+                ul
+                  - @data['people'].each do |item|
+                    li
+                      a href="/search/result?q=http://lod.ifmo.ru/Person#{item['uri'][/\d+/, 0]}"= item['name']
+        p
+          .row
+            .col-md-2.text-right
+              strong Направления исследований:
+            .col-md-10
+              span
+                ul
+                  - @data['areas'].each do |item|
+                    li
+                      a href="/search/result?q=http://lod.ifmo.ru/ResearchArea#{item['uri'][/\d+/, 0]}"= item['name']
+        p
+          .row
+            .col-md-2.text-right
+              strong Страны:
+            .col-md-10
+              span
+                ul
+                  - @data['country'].each do |item|
+                    li
+                      a href="#{item}" target='_blank'= item
+                  
+        p
+          .row
+            .col-md-2.text-right
+              strong Тип:
+            .col-md-10
+              span
+                ul
+                  - @data['type'].each do |item|
+                    li
+                      a href="#{item}" target='_blank'= item

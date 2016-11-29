@@ -2,5 +2,7 @@
   = render partial: 'person'
 - elsif @type.to_sym == :research_area
   = render partial: 'research_area'
+- elsif @type.to_sym == :laboratory
+  = render partial: 'laboratory'
 - else
   p undefined
