@@ -24,10 +24,10 @@ class SearchController < ApplicationController
   end
 
   private
-  
+
   def upload_person
     url = "#{Rails.configuration.x.lod_ifmo_api_url}/people"
-    
+
     conn = Faraday.new(url: url) do |faraday|
       faraday.adapter Faraday.default_adapter
       faraday.response :json
@@ -41,10 +41,10 @@ class SearchController < ApplicationController
       logger.error e.backtrace.join("\n")
     end
   end
-  
+
   def upload_research_area
     url = "#{Rails.configuration.x.lod_ifmo_api_url}/research_areas"
-    
+
     conn = Faraday.new(url: url) do |faraday|
       faraday.adapter Faraday.default_adapter
       faraday.response :json

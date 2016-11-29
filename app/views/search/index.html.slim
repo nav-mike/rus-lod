@@ -9,13 +9,13 @@
       .input-group data-json="#{render template: 'search/data.json'}"
         input.typeahead.form-control#search[type='text'
           name='q'
-          placeholder='Поиск...'
+          placeholder="#{I18n.t 'root.search_placeholder'}"
           data-provide='typehead'
           autocomplete='off']
         span.input-group-btn
           button.btn.btn-primary.btn-raised#srchBtn type='button'
             i.material-icons search
-            |  Поиск
+            = I18n.t 'root.search_button'
           .modal.js-loading-bar
             .modal-dialog
               .modal-content

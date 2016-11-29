@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  root:
+    project: 'Linked Open Data of ITMO University'
+    data_menu: 'Data'
+    visualization_menu: 'Visualization'
+    statistics_menu: 'Statistics'
+    publications_menu: 'Publications'
+    about_menu: 'About'
+    search_placeholder: 'Search...'
+    search_button: 'Search'

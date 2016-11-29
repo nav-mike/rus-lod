@@ -3,8 +3,7 @@ html
   head
     meta charset='utf-8'
     meta content='IE=edge' http-equiv='X-UA-Compatible'
-    title
-      | Портал Открытых Данных Университета ИТМО
+    title= I18n.t 'root.project'
     = stylesheet_link_tag 'application',
                            media: 'all',
                            'data-turbolinks-track' => true
@@ -28,7 +27,7 @@ html
             a.navbar-brand href='/' LOD Портал
           - else
             a.navbar-brand href='/'
-              | Портал Открытых Данных Университета ИТМО
+              = I18n.t 'root.project'
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             - if current_user.present?
@@ -36,7 +35,7 @@ html
                 a href='/mappings' Маппинги
             li.dropdown
               a.dropdown-toggle href='#' data-target='#' data-toggle='dropdown'
-                | Данные
+                = I18n.t 'root.data_menu'
                 b.caret
               ul.dropdown-menu
                 li
@@ -74,13 +73,13 @@ html
                 li
                   a href='/apis#rest' REST
             li
-              a href='/visualization' Визуализация
+              a href='/visualization'= I18n.t 'root.visualization_menu'
             li
-              a href='/statistics' Статистика
+              a href='/statistics'= I18n.t 'root.statistics_menu'
             li
-              a href='/publications' Публикации
+              a href='/publications'= I18n.t 'root.publications_menu'
             li
-              a href='/about' О проекте
+              a href='/about'= I18n.t 'root.about_menu'
           - if current_user.present?
             ul.nav.navbar-nav.navbar-right
               li.dropdown
@@ -93,6 +92,8 @@ html
                       - fa_icon 'sign-out fw', text: 'Sign out'
 
     .container style='padding-top: 40px; padding-bottom: 60px;'
+      .text-right
+        = locale_link
       == yield
 
     footer.footer#footer

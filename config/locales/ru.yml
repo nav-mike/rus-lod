@@ -1,0 +1,10 @@
+ru:
+  root:
+    project: 'Портал Открытых Данных Университета ИТМО'
+    data_menu: 'Данные'
+    visualization_menu: 'Визуализация'
+    statistics_menu: 'Статистика'
+    publications_menu: 'Публикации'
+    about_menu: 'О проекте'
+    search_placeholder: 'Поиск...'
+    search_button: 'Поиск'
